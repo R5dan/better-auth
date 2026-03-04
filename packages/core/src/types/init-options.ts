@@ -705,6 +705,14 @@ export type BetterAuthOptions = {
 				 */
 				revokeSessionsOnPasswordReset?: boolean;
 				/**
+				 * Whether to always call `emailAndPassword.onExistingUserSignUp` callback
+				 * `true`: Will always call `emailAndPassword.onExistingUserSignUp`
+				 * `false`: Will never call `emailAndPassword.onExistingUserSignUp`
+				 * `undefined`: Will call `emailAndPassword.onExistingUserSignUp` when `requireEmailVerification: true` or `autoSignIn: false`
+				 * @default undefined
+				 */
+				callExistingUserCallback?: boolean
+				/**
 				 * A callback function that is triggered when a user tries to sign up
 				 * with an email that already exists. Useful for notifying the existing user
 				 * that someone attempted to register with their email.
